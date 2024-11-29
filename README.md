@@ -1,1 +1,0 @@
-# ffmpge_study

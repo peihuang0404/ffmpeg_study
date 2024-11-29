@@ -1,0 +1,85 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "02_demux-mp4", //显示在“调试启动配置”下拉列表中的易于阅读的名称
+            "type": "cppdbg", //用于此启动配置的调试器类型，此处表示C/C++代码
+            "request": "launch", //此启动配置的请求类型。"launch" 表示启动一个新的程序，"attach" 表示连接到一个已经运行的程序。
+            "program": "${workspaceFolder}/02_demux-mp4", //你的程序路径，${workspaceFolder}表示当前路径，就是你整个工程下
+            "args": ["./DAIMO.mp4", "./daimo.h264", "./daimo.acc"], //程序入口参数
+            "stopAtEntry": true, //程序启动时立即中断，设置后会停在主函数处
+            "cwd": "${workspaceFolder}", //用于查找依赖项和其他文件的当前工作目录
+            "environment": [], //程序运行时的环境变量
+            "externalConsole": false, //控制台设置
+            "MIMode": "gdb", //指定了调试器的模式
+            "setupCommands": [ //gdb 启动后要执行的一些命令
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "showDisplayString": true
+        },
+        {
+            "name": "03_extract-aac", //显示在“调试启动配置”下拉列表中的易于阅读的名称
+            "type": "cppdbg", //用于此启动配置的调试器类型，此处表示C/C++代码
+            "request": "launch", //此启动配置的请求类型。"launch" 表示启动一个新的程序，"attach" 表示连接到一个已经运行的程序。
+            "program": "${workspaceFolder}/03_extract-aac", //你的程序路径，${workspaceFolder}表示当前路径，就是你整个工程下
+            "args": ["./DAIMO.mp4", "./daimo.acc"], //程序入口参数
+            "stopAtEntry": true, //程序启动时立即中断，设置后会停在主函数处
+            "cwd": "${workspaceFolder}", //用于查找依赖项和其他文件的当前工作目录
+            "environment": [], //程序运行时的环境变量
+            "externalConsole": false, //控制台设置
+            "MIMode": "gdb", //指定了调试器的模式
+            "setupCommands": [ //gdb 启动后要执行的一些命令
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "showDisplayString": true
+        },
+        {
+            "name": "05_decode_audio", //显示在“调试启动配置”下拉列表中的易于阅读的名称
+            "type": "cppdbg", //用于此启动配置的调试器类型，此处表示C/C++代码
+            "request": "launch", //此启动配置的请求类型。"launch" 表示启动一个新的程序，"attach" 表示连接到一个已经运行的程序。
+            "program": "${workspaceFolder}/05_decode_audio", //你的程序路径，${workspaceFolder}表示当前路径，就是你整个工程下
+            "args": ["./daimo.acc","./daimo.pcm"], //程序入口参数
+            "stopAtEntry": true, //程序启动时立即中断，设置后会停在主函数处
+            "cwd": "${workspaceFolder}", //用于查找依赖项和其他文件的当前工作目录
+            "environment": [], //程序运行时的环境变量
+            "externalConsole": false, //控制台设置
+            "MIMode": "gdb", //指定了调试器的模式
+            "setupCommands": [ //gdb 启动后要执行的一些命令
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "showDisplayString": true
+        },
+        {
+            "name": "06_decode_video", //显示在“调试启动配置”下拉列表中的易于阅读的名称
+            "type": "cppdbg", //用于此启动配置的调试器类型，此处表示C/C++代码
+            "request": "launch", //此启动配置的请求类型。"launch" 表示启动一个新的程序，"attach" 表示连接到一个已经运行的程序。
+            "program": "${workspaceFolder}/06_decode_video", //你的程序路径，${workspaceFolder}表示当前路径，就是你整个工程下
+            "args": ["./daimo.h264","./daimo.yuv"], //程序入口参数
+            "stopAtEntry": true, //程序启动时立即中断，设置后会停在主函数处
+            "cwd": "${workspaceFolder}", //用于查找依赖项和其他文件的当前工作目录
+            "environment": [], //程序运行时的环境变量
+            "externalConsole": false, //控制台设置
+            "MIMode": "gdb", //指定了调试器的模式
+            "setupCommands": [ //gdb 启动后要执行的一些命令
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "showDisplayString": true
+        }
+    ]
+}
